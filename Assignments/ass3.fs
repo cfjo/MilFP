@@ -10,11 +10,15 @@ module Assignment3
     
     let add5_2 (f: 'a -> int) (x: 'a) = (f >> add5) x
 
-    let mul3_2 _ = failwith "not implemented"
+    let mul3_2 (f: 'a -> int) (x: 'a) = (f << mul3) x
    
-    let rec downto4 _ = failwith "not implemented"
+    let rec downto4 f n e = 
+        match n with
+        | 0 -> e
+        | _ -> f n (downto4 (f (n-1) e))
                 
-    let fac _ = failwith "not implemented"
+    let fac x = 
+    downto4 (fun x -> x * x) x 1
     
     let range _ = failwith "not implemented"
     
