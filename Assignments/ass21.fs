@@ -38,21 +38,67 @@
         match c1 c2 with
         | (a, b) (c, d) -> (a + c, b + d)
 
-    let (|*|) _ = failwith "not implemented"
-    let (|-|) _ = failwith "not implemented"
-    let (|/|) _ = failwith "not implemented"
+    let (|*|) (a: complex) (b: complex) = 
+        let (a, b) = complexToPair a
+        let (c, d) = complexToPair b
+        mkComplex (a * c - b * d) (b * c + a * d)
 
-    let explode1 _ = failwith "not implemented"
+    let (|-|) (a: complex) (b: complex) =
+        let (a, b) = complexToPair a
+        let (c, d) = complexToPair b
+        mkComplex (a - c) (b - d)
+        
+    let (|/|) (a: complex) (b: complex) =
+        let (a, b) = complexToPair a
+        let (c, d) = complexToPair b
+        let d = b * d + a * c
+        mkComplex ((x1 * x2 + y1 * y2) / d)((y1 * x2 - x1 * y2) / d)
 
-    let rec explode2 _ = failwith "not implemented"
+    let explode1 (s: string) = s.ToCharArray() |> List.ofArray
 
-    let implode _ = failwith "not implemented"
-    let implodeRev _ = failwith "not implemented"
+    let rec explode2 (s: string) = 
+        if (s = "") then []
+        else s.[0] :: explode2 (s.Substring(1))
 
-    let toUpper _ = failwith "not implemented"
+    let rec implode (cs: char list): string = 
+        match cs with
+        | [] -> ""
+        | head :: tail -> head.ToString() + implode (tail)
 
-    let ack _ = failwith "not implemented"
-    
+    let rec implodeRev (cs: char list): string =
+            match cs with
+            | [] -> ""
+            | head :: tail -> implodeRev (tail) + head.ToString()   
+   
+    (*Alternatively:
+
+    let rec implodeRev (cs: char list) = 
+        match cs with
+        | [] -> ""
+        | _ -> cs[cs.Length-1].ToString() + implodeRev (cs.[..cs.Length - 2])
+        
+    *)
+
+    let toUpper s =
+        let rec uppercase (cs: char list) =
+            match cs with
+            | [] -> []
+            | head :: tail -> System.Char.ToUpper (head) :: uppercase tail
+        s |> explode2 |> uppercase |> implode
+
+    //helper func
+    let rec uppercase (cs: char list) =
+            match cs with
+            | [] -> []
+            | head :: tail -> System.Char.ToUpper (head) :: uppercase tail
+
+    //let toUpper2 = explode2 s >> uppercase >> implode
+
+    let rec ack ((m, n) : (int, int)) : int =
+        if (m = 0) then n + 1
+        else if n = 0 then ack (m-1, 1)
+            else ack (m-1, ack(m, n-1))
+            
     //YELLOW
     let reverse _ = failwith "not implemented"
     let palindrome _ = failwith "not implemented"
