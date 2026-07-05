@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="MilFP">
+    <resource name="FSharpSignatureData.MilFP" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.MilFP" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.MilFP" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.MilFP" action="remove"></resource>
+    <resource name="FSharpOptimizationData.MilFP" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.MilFP" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.MilFP" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.MilFP" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.MilFP" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.MilFP" action="remove"></resource>
+  </assembly>
+</linker>

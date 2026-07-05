@@ -27,7 +27,6 @@
         | [a; b] -> [(a, b)]
         | [a; b; c] -> [(a, b)]
         | a :: b :: rest -> (a, b) :: combinePair rest
-        | _ -> failwith "no no no DON'T TO THAAAT"
 
     type complex = (float * float)
 
@@ -40,21 +39,21 @@
         let (c, d) = complexToPair c2
         mkComplex (a + c) (b + d)
 
-    let (|*|) (c1: complex) (c2: complex) = 
-        let (a, b) = complexToPair c1
-        let (c, d) = complexToPair c2
+    let (|*|) (a: complex) (b: complex) = 
+        let (a, b) = complexToPair a
+        let (c, d) = complexToPair b
         mkComplex (a * c - b * d) (b * c + a * d)
 
-    let (|-|) (c1: complex) (c2: complex) =
-        let (a, b) = complexToPair c1
-        let (c, d) = complexToPair c2
+    let (|-|) (a: complex) (b: complex) =
+        let (a, b) = complexToPair a
+        let (c, d) = complexToPair b
         mkComplex (a - c) (b - d)
         
-    let (|/|) (c1: complex) (c2: complex) =
-        let (a, b) = complexToPair c1
-        let (c, d) = complexToPair c2
-        let de = b * d + a * c
-        mkComplex ((a * c + b * d) / de)((b * c - a * d) / de)
+    let (|/|) (a: complex) (b: complex) =
+        let (a, b) = complexToPair a
+        let (c, d) = complexToPair b
+        let d = b * d + a * c
+        mkComplex ((x1 * x2 + y1 * y2) / d)((y1 * x2 - x1 * y2) / d)
 
     let explode1 (s: string) = s.ToCharArray() |> List.ofArray
 
