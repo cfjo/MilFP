@@ -10,7 +10,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("MilFP")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ced120762a3e0e762359cb6ce8c0fb8f2a847acc")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+70468f27a58bec1a8b18bf143ca943ab7296343f")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("MilFP")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("MilFP")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]

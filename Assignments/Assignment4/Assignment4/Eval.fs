@@ -3,7 +3,8 @@ module Interpreter.Eval
     open Result
     open Language
     
-    let aexprToString _ = failwith "not implemented"
+    let aexprToString a = 
+        
     let bexprToString _ = failwith "not implemented"
     
     let aexprEval _ = failwith "not implemented"
