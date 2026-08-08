@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "Zy9pSX+CrAo=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\cfrok\\Desktop\\MilFP\\Exam sets\\FPExam2026\\FPExam2026\\Exam2026_Template\\Exam2026_Template.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cfrok\\.nuget\\packages\\fsharp.core\\10.1.201\\fsharp.core.10.1.201.nupkg.sha512",
+    "C:\\Users\\cfrok\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.14\\microsoft.netcore.app.ref.9.0.14.nupkg.sha512",
+    "C:\\Users\\cfrok\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.14\\microsoft.windowsdesktop.app.ref.9.0.14.nupkg.sha512",
+    "C:\\Users\\cfrok\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.14\\microsoft.aspnetcore.app.ref.9.0.14.nupkg.sha512",
+    "C:\\Users\\cfrok\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\9.0.14\\microsoft.netcore.app.host.win-x64.9.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}

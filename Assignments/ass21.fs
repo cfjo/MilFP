@@ -27,7 +27,6 @@
         | [a; b] -> [(a, b)]
         | [a; b; c] -> [(a, b)]
         | a :: b :: rest -> (a, b) :: combinePair rest
-        | _ -> failwith "no no no DON'T TO THAAAT"
 
     type complex = (float * float)
 
@@ -38,69 +37,27 @@
     let (|+|) (c1: complex) (c2: complex): complex = 
         let (a, b) = complexToPair c1
         let (c, d) = complexToPair c2
-        mkComplex (a + c) (b + d)
+        mkComplex (a + c, b + d)
 
-    let (|*|) (c1: complex) (c2: complex) = 
-        let (a, b) = complexToPair c1
-        let (c, d) = complexToPair c2
-        mkComplex (a * c - b * d) (b * c + a * d)
+    let (|*|) _ = failwith "not implemented"
+    let (|-|) _ = failwith "not implemented"
+    let (|/|) _ = failwith "not implemented"
 
-    let (|-|) (c1: complex) (c2: complex) =
-        let (a, b) = complexToPair c1
-        let (c, d) = complexToPair c2
-        mkComplex (a - c) (b - d)
-        
-    let (|/|) (c1: complex) (c2: complex) =
-        let (a, b) = complexToPair c1
-        let (c, d) = complexToPair c2
-        let de = b * d + a * c
-        mkComplex ((a * c + b * d) / de)((b * c - a * d) / de)
+    let explode1 _ = failwith "not implemented"
 
-    let explode1 (s: string) = s.ToCharArray() |> List.ofArray
+    let rec explode2 _ = failwith "not implemented"
 
-    let rec explode2 (s: string) = 
-        if (s = "") then []
-        else s.[0] :: explode2 (s.Substring(1))
-
-    let rec implode (cs: char list): string = 
-        match cs with
+    let rec implode c = 
+        match c with
         | [] -> ""
-        | head :: tail -> head.ToString() + implode (tail)
+        | head :: tail -> string head + implode tail //skriv "string" for at gøre tingen til en string
 
-    let rec implodeRev (cs: char list): string =
-            match cs with
-            | [] -> ""
-            | head :: tail -> implodeRev (tail) + head.ToString()   
-   
-    (*Alternatively:
+    let implodeRev _ = failwith "not implemented"
 
-    let rec implodeRev (cs: char list) = 
-        match cs with
-        | [] -> ""
-        | _ -> cs[cs.Length-1].ToString() + implodeRev (cs.[..cs.Length - 2])
-        
-    *)
+    let toUpper _ = failwith "not implemented"
 
-    let toUpper s =
-        let rec uppercase (cs: char list) =
-            match cs with
-            | [] -> []
-            | head :: tail -> System.Char.ToUpper (head) :: uppercase tail
-        s |> explode2 |> uppercase |> implode
-
-    //helper func
-    let rec uppercase (cs: char list) =
-            match cs with
-            | [] -> []
-            | head :: tail -> System.Char.ToUpper (head) :: uppercase tail
-
-    //let toUpper2 = explode2 s >> uppercase >> implode
-
-    let rec ack ((m, n) : (int * int)) : int =
-        if (m = 0) then n + 1
-        else if n = 0 then ack (m-1, 1)
-            else ack (m-1, ack(m, n-1))
-
+    let ack _ = failwith "not implemented"
+    
     //YELLOW
     let reverse _ = failwith "not implemented"
     let palindrome _ = failwith "not implemented"

@@ -3,8 +3,10 @@ module Interpreter.Eval
     open Result
     open Language
     
-    let aexprToString a = 
-        
+    let aexprToString (a: aexpr) = 
+        match a with
+        Num -> 
+
     let bexprToString _ = failwith "not implemented"
     
     let aexprEval _ = failwith "not implemented"
