@@ -2,7 +2,7 @@ module Assignment3
     
     let add5 x = x + 5
         
-    let mul3 x = x * 3
+    let mul3 x = x * 3  
 
     let add5mul3 x = x |> add5 |> mul3
 
