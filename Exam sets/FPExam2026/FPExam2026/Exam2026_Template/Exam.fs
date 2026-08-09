@@ -86,23 +86,87 @@ module Exam2026_Template.Exam
         
     (* Question 3.1 *)
     
-    let encode _ = failwith "not implemented"
+    let encode (str: string) : string =
+        let s = explode str
+        let rec aux sl =
+            match sl with
+            | [] -> []
+            | head :: tail ->
+                if isConsonant head then 
+                    head :: 'o' :: head :: aux tail
+                else head :: aux tail
+        s |> aux |> implode
 
     (* Question 3.2 *)
     
-    let decode _ = failwith "not implemented"
-
+    let decode(str: string) : string = 
+        let s = explode str
+        let rec aux cl = 
+            match cl with
+            | []  -> []
+            | head :: 'o' :: same :: tail ->
+                if isConsonant head 
+                    then head :: aux tail
+                else head :: aux ('o' :: same :: tail) 
+            | head :: tail -> head :: aux tail
+        s |> aux |> implode     
+    
     (* Question 3.3 *)
-    
-    let encode_fun _ = failwith "not implemented"
+    //List.fold folder state list
+    //state = like an accumulator
+
+    let encode_fun (f: char -> string) (str: string) : string = 
+        let cl = explode str
+        List.fold (fun acc c -> acc + f c) "" cl
         
-    (* Question 3.4 *)
+        (*
+            fun acc c -> acc + f c = function
+            "" = initial state
+            cl = list
+        *)
     
-    let parser_robbers_language = pstring "not implemented"
+    let encode2 (str: string) =
+        encode_fun 
+            (fun c ->
+                if isConsonant c then
+                    string c + "o" + string c
+                else
+                    string c
+            ) str
+
+    (* Question 3.4 *)
+        
+    let parser_robbers_language = 
+        many anyChar |>> implode |>> encode
     
     (* Question 3.5 *)
     
-    let encode_par _ = failwith "not implemented"
+    let encode_par (str: string) (num: int) =
+        //make a list of words back into a single space-seperated string
+        let composeWords (words: string list) : string =
+            String.concat " " words
+        
+        let words = str.Split(' ') |> Array.toList
+
+        let n = List.length words
+        
+        if n = 0 then ""
+        else
+            (*celing division: number of words per chunk, so we only get at most 'num' chunks*)
+            let chunkSize = (n + num - 1) / num
+            let chunks = List.chunkBySize chunkSize words
+
+            //spawn one task per chunk; each task encodes it's own words and composes them
+            let tasks =
+                chunks
+                |> List.map (fun chunk ->
+                    System.Threading.Tasks.Task.Run(fun () ->
+                        chunk |> List.map encode |> composeWords))
+            
+            //wait for all tasks and collect their results in order
+            let results = tasks |> List.map (fun t -> t.Result)
+ 
+            composeWords results
 
     (* Question 4: The N-Queens problem (25%) *)
     
@@ -111,15 +175,16 @@ module Exam2026_Template.Exam
     type board = 
         {
             n: int;
-            rows: option<int> list;
+            rows: int list;
             (* liste der svarer til rækker, indeholder hvor på rækken,
             der er placeret et dronning eks:
-            [1, 0, 2] har en dronning på række 0, kollone 1*)
+            [1, 0, 2] har en dronning på række 0, kollone 1
+            -1 = no queen *)
         }
             
-    let rec makeList n : option<int> list =
+    let rec makeList n : int list =
         if n = 0 then []
-        else None :: makeList (n - 1)
+        else -1 :: makeList (n - 1)
     
     let empty (N: int) : board =
      { n = N
@@ -127,14 +192,44 @@ module Exam2026_Template.Exam
     
     let get_dimension (b: board) = b.n
     
-    let has_queen (r: int) (c: int option) (b: board) = 
+    let has_queen (r: int) (c: int) (b: board) = 
         if b.rows[r] = c then true else false
     
     (* Question 4.2 *)
         
-    let place_queen _ = failwith "not implemented"
-    
-    let valid_solution _ = failwith "not implemented"
+    let place_queen (r: int) (c: int) (b: board) : board option = 
+        let rec checkColumn row =
+                if row = -1 then true else
+                    if b.rows[row] <> c then
+                        checkColumn (row - 1)
+                    else false
+        
+        let rec replaceSquare (row: int) (column: int) (xs: int list) : int list =
+            match xs with
+            | [] -> []
+            | head :: tail ->
+                if row = 0 then
+                    column :: tail
+                else
+                    head :: replaceSquare (row - 1) column tail
+
+        if b.rows[r] = -1 && checkColumn (b.n - 1) then
+            Some {b with rows = replaceSquare r c b.rows}
+        else None
+
+        (*1. tjek om der er noget på rækken
+          2. tjek om der er noget i kolonnen
+          3. hvis ja -> None
+          4. hvis nej -> b.rows[r] = c*)
+        
+    let valid_solution (b: board) : bool = 
+        let rec countQueens (l: int list) (acc: int) =
+            match l with
+            | [] -> acc
+            | head :: tail ->
+                if head <> -1 then countQueens tail (acc + 1)
+                else acc
+        countQueens b.rows 0 = b.n
     
     (* Question 4.3 *)
     type chessMonad<'a> = CM of (board -> ('a * board) option)  

@@ -10,7 +10,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("Exam2026_Template")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cced8feda3887fabbebaf192d9c6d90af06a3ec4")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4d8749a0d20b0839cefa7be6bcf666539b722fc")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("Exam2026_Template")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("Exam2026_Template")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]
