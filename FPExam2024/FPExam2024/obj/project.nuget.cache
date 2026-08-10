@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "CQZOW2+kWoU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\cfrok\\Desktop\\MilFP\\FPExam2024\\FPExam2024\\FPExam2024.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\cfrok\\.nuget\\packages\\fsharp.core\\10.1.201\\fsharp.core.10.1.201.nupkg.sha512"
+  ],
+  "logs": []
+}

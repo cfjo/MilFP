@@ -1,0 +1,21 @@
+let safeDivide (a: float) (b: float) : float option =
+    if b <> 0.0 then Some a / b
+    else None
+
+let parseInt (s: string) =
+    match System.Int32.TryParse s with
+    | true, n -> Some n
+    | false, _ -> None
+
+let doubleParsed s =
+    parseInt s
+    |> Option.map (fun x -> x * 2)
+//eks "21" -> Some 42
+
+let halfIfEven (x: int) : int option =
+    if x % 2 = 0 then Some x / 2
+    else None
+
+let parseAndHalf s =
+    parseInt s
+    |> Option.bind halfIfEven
