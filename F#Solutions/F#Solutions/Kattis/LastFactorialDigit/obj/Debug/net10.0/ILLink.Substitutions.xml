@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="LastFactorialDigit">
+    <resource name="FSharpSignatureData.LastFactorialDigit" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.LastFactorialDigit" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.LastFactorialDigit" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.LastFactorialDigit" action="remove"></resource>
+    <resource name="FSharpOptimizationData.LastFactorialDigit" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.LastFactorialDigit" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.LastFactorialDigit" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.LastFactorialDigit" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.LastFactorialDigit" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.LastFactorialDigit" action="remove"></resource>
+  </assembly>
+</linker>

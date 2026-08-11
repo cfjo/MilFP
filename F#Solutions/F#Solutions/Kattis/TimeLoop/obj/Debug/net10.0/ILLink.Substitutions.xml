@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="TimeLoop">
+    <resource name="FSharpSignatureData.TimeLoop" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.TimeLoop" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.TimeLoop" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.TimeLoop" action="remove"></resource>
+    <resource name="FSharpOptimizationData.TimeLoop" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.TimeLoop" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.TimeLoop" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.TimeLoop" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.TimeLoop" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.TimeLoop" action="remove"></resource>
+  </assembly>
+</linker>

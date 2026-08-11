@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="TestingLEDs">
+    <resource name="FSharpSignatureData.TestingLEDs" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.TestingLEDs" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.TestingLEDs" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.TestingLEDs" action="remove"></resource>
+    <resource name="FSharpOptimizationData.TestingLEDs" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.TestingLEDs" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.TestingLEDs" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.TestingLEDs" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.TestingLEDs" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.TestingLEDs" action="remove"></resource>
+  </assembly>
+</linker>

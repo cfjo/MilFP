@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="HipHurra">
+    <resource name="FSharpSignatureData.HipHurra" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.HipHurra" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.HipHurra" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.HipHurra" action="remove"></resource>
+    <resource name="FSharpOptimizationData.HipHurra" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.HipHurra" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.HipHurra" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.HipHurra" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.HipHurra" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.HipHurra" action="remove"></resource>
+  </assembly>
+</linker>

@@ -12,9 +12,12 @@ module Exam2026_Template.Exam
         | _ -> k * (lucas_number k (n - 1)) + lucas_number k (n - 2)
     
     (* Question 1.2 *)
-    let lucas_number_acc (k: int) (n: int) (acc: int) = failwith "nuh uh"
-        //let rec aux i cur next
-    (*I'll get back to you*)
+    let lucas_number_acc (k: int) (n: int) (acc: int) =
+        let rec loop n a b = 
+            match n with
+            | 0 -> a
+            | _  -> loop (n - 1) b (k * b + a)
+        loop n 0 1
 
     (* Question 1.3 *)
     let sqrt_approx (k: int) (n: int) : float =
@@ -29,10 +32,8 @@ module Exam2026_Template.Exam
         check 2
 
     (* Question 1.5 *)
-    let lucas_seq (k: int) : seq<int> = failwith "not implemented"
-        
-        
-
+    let lucas_seq (k: int) : seq<int> = 
+        Seq.unfold (fun (a, b) -> Some (a, (b, k * b + a))) (2, k)
 
     (* Question 2: Code comprehension (25%) *)
     
@@ -41,22 +42,36 @@ module Exam2026_Template.Exam
     (*
      
      Q: What do the functions `foo`, `bar`, and `baz` do? Focus on what they do rather than how they do it.
-     A: <Your answer goes here>     
-      
+     A: foo returns the smallest divisor of x (finds the first divisor of x, starting from a)
+        bar returns the smallest factor of x, aside from 1. Also makes sure not to divide by 0.
+        also, if bar x = x, then x is a prime number
+        baz returns the prime factorizations of x as a list 
+        (aka, the prime numbers that, multiplied with each other gives x) 
+        ex: baz 8 = [2, 2, 2] because 2 * 2 * 2 = 8
+
      Q: What would be appropriate names for functions `foo`, `bar`, and `baz`.
-     A: <Your answer goes here>     
+     A: foo = smallestDivisor
+        bar = smallestFactor
+        baz = primeFactors     
      
      Q: For these functions to behave meaningfully, we must place a restriction on the input values. What restriction?
-     A: <Your answer goes here>
+     A: The input must be a nonnegative integer // the input must be an integer >= 2
     *)
     
     (* Question 2.2 *)
     
-    let foo2 _ = failwith "not implemented"
+    let rec foo2 x = 
+        function  
+        | a when x % a = 0 -> a  
+        | a -> foo2 x (a + 1)
+
     
     (* Question 2.3 *)
     
-    let baz_inverse _ = failwith "not implemented"
+    let baz_inverse (x: int list) =
+        List.fold (fun x acc -> acc * x) 1 x
+                //function, starting value, list
+    //baz_inverse [2; 2; 3]
     
     (* Question 2.4 *)
     
@@ -69,12 +84,41 @@ module Exam2026_Template.Exam
       Keep in mind that all steps in an evaluation chain must evaluate to the
       same value (```(5 + 4) * 3 --> 9 * 3 --> 27```, for instance).
       
-      A: <Your answer goes here>
+      A: baz is not tail-recursive. This is because it starts with "match bar x with",
+      meaning we have to wait for bar to return a result, before we can evaluate the rest
+      of the expression. Bar itself also has to call another function, which needs to be
+      evaluated before we can move on. 
+      Example:
+      baz 8 -> (bar 8 -> foo 8 2 -> 2) 
+      match 2 with
+      | 2 -> 2 :: (baz (x / y))
+               -> (baz (2/8))
+               -> (baz 4)
+               -> match bar 4 (foo 4 2 -> 2) with
+                    | 2 -> 2 :: 2 :: (baz 4 / 2)
+                                  -> (baz 2)
+                                  -> match bar 2 (foo 2 2 -> 2) with
+                                     | 2 = 2 -> [2]
+      -> 2 :: 2 :: 2
+
     *)
     
     (* Question 2.5 *)
     
-    let cont _ = failwith "not implemented"
+    let rec foo x =
+        function  
+        | a when x = a     -> a  
+        | a when x % a = 0 -> a  
+        | a                -> foo x (a + 1)  
+    let rec bar =  
+        function  
+        | 0 -> 0  
+        | 1 -> 1  
+        | x -> foo x 2
+    let barC x k =
+        k (bar x)
+    let cont (x: int) = 
+
     
     (* Question 3: The robbers language (25%) *)
     
@@ -169,7 +213,8 @@ module Exam2026_Template.Exam
             composeWords results
 
     (* Question 4: The N-Queens problem (25%) *)
-    
+     
+
     (* Question 4.1 *)
     
     type board = 
@@ -246,9 +291,9 @@ module Exam2026_Template.Exam
 
     let (>>=) a f = bind f a  
     let (>>>=) a b = a >>= (fun _ -> b)  
-      
+    
     let evalCM (CM f) N = f (empty N) 
-            
+    
     let place_queen2 _ = failwith "not implemented"
     
     let valid_solution2 = ret true // your solution goes here

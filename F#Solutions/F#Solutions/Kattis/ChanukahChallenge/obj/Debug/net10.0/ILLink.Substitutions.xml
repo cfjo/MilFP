@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="ChanukahChallenge">
+    <resource name="FSharpSignatureData.ChanukahChallenge" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.ChanukahChallenge" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.ChanukahChallenge" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.ChanukahChallenge" action="remove"></resource>
+    <resource name="FSharpOptimizationData.ChanukahChallenge" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.ChanukahChallenge" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.ChanukahChallenge" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.ChanukahChallenge" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.ChanukahChallenge" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.ChanukahChallenge" action="remove"></resource>
+  </assembly>
+</linker>

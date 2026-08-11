@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="GinFizz">
+    <resource name="FSharpSignatureData.GinFizz" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.GinFizz" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.GinFizz" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.GinFizz" action="remove"></resource>
+    <resource name="FSharpOptimizationData.GinFizz" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.GinFizz" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.GinFizz" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.GinFizz" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.GinFizz" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.GinFizz" action="remove"></resource>
+  </assembly>
+</linker>

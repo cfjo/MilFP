@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="reversebinary">
+    <resource name="FSharpSignatureData.reversebinary" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.reversebinary" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.reversebinary" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.reversebinary" action="remove"></resource>
+    <resource name="FSharpOptimizationData.reversebinary" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.reversebinary" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.reversebinary" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.reversebinary" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.reversebinary" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.reversebinary" action="remove"></resource>
+  </assembly>
+</linker>

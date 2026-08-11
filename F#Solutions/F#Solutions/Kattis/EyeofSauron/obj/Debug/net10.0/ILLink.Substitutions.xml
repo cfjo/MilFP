@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="EyeofSauron">
+    <resource name="FSharpSignatureData.EyeofSauron" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.EyeofSauron" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.EyeofSauron" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.EyeofSauron" action="remove"></resource>
+    <resource name="FSharpOptimizationData.EyeofSauron" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.EyeofSauron" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.EyeofSauron" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.EyeofSauron" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.EyeofSauron" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.EyeofSauron" action="remove"></resource>
+  </assembly>
+</linker>

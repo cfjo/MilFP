@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="StandonZanzibar">
+    <resource name="FSharpSignatureData.StandonZanzibar" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.StandonZanzibar" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.StandonZanzibar" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.StandonZanzibar" action="remove"></resource>
+    <resource name="FSharpOptimizationData.StandonZanzibar" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.StandonZanzibar" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.StandonZanzibar" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.StandonZanzibar" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.StandonZanzibar" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.StandonZanzibar" action="remove"></resource>
+  </assembly>
+</linker>

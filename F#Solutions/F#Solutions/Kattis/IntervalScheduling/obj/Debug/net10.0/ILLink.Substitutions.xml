@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="IntervalScheduling">
+    <resource name="FSharpSignatureData.IntervalScheduling" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.IntervalScheduling" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.IntervalScheduling" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.IntervalScheduling" action="remove"></resource>
+    <resource name="FSharpOptimizationData.IntervalScheduling" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.IntervalScheduling" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.IntervalScheduling" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.IntervalScheduling" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.IntervalScheduling" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.IntervalScheduling" action="remove"></resource>
+  </assembly>
+</linker>

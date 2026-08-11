@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="Prsteni">
+    <resource name="FSharpSignatureData.Prsteni" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.Prsteni" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.Prsteni" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.Prsteni" action="remove"></resource>
+    <resource name="FSharpOptimizationData.Prsteni" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.Prsteni" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.Prsteni" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.Prsteni" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.Prsteni" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.Prsteni" action="remove"></resource>
+  </assembly>
+</linker>

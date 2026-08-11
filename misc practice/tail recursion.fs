@@ -89,6 +89,8 @@
         loop 0 0 1
 
     (*
+
     fibI    = fib (i) 
     fibNext = fib (i + 1)
+    
     *)

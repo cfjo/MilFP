@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="BitteEinBit">
+    <resource name="FSharpSignatureData.BitteEinBit" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.BitteEinBit" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.BitteEinBit" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.BitteEinBit" action="remove"></resource>
+    <resource name="FSharpOptimizationData.BitteEinBit" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.BitteEinBit" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.BitteEinBit" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.BitteEinBit" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.BitteEinBit" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.BitteEinBit" action="remove"></resource>
+  </assembly>
+</linker>

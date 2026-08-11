@@ -1,0 +1,65 @@
+Core syntax
+Async<T>              // type of an async computation returning a T
+async { ... }          // computation expression to build an Async<T>
+let! x = someAsync     // "await" inside an async block (like bind)
+return x                // wrap a value as the async's result
+return! someAsync       // tail-call into another async computation
+
+Running Async Computations
+Async.RunSynchronously : Async<'T> -> 'T
+// runs it now, blocks the calling thread until done
+
+
+Parallel Composition
+Async.Parallel : seq<Async<'a>> -> Async<'a []>
+// runs all of them concurrently, waits for all, collects results
+
+// build it with map:
+urls |> List.map asyncFn |> Async.Parallel
+
+
+Fire-and-Forget
+Async.Start : Async<unit> -> unit
+// starts it, returns immediately, doesn't wait for completion
+
+Async.Start : Async<unit> * ?CancellationToken -> unit
+// optional token lets you cancel it later
+
+Cancellation
+let ts = new CancellationTokenSource()
+Async.Start(myAsync, ts.Token)
+ts.Cancel()   // cancels all asyncs started with this token
+
+
+Continuations (success / exception / cancel)
+Async.StartWithContinuations :
+   Async<'T>
+   * ('T -> unit)                          // on success
+   * (exn -> unit)                         // on exception
+   * (OperationCanceledException -> unit)  // on cancellation
+   * ?CancellationToken -> unit
+
+
+Common Async-Returning Ops
+stream.AsyncRead  : int -> Async<string>   // read n chars
+stream.AsyncWrite : string -> Async<unit>  // write string
+Async.Sleep       : int -> Async<unit>     // wait n ms
+webCl.AsyncDownloadString : Uri -> Async<string>
+
+
+Example
+let doesItHaveFacebook url : Async<bool> =
+  let webCl = new System.Net.WebClient()
+  async { let! html = webCl.AsyncDownloadString(Uri url)
+          return html.IndexOf("facebook.com") >= 0 }
+
+// sequential
+let seqCheck = async {
+    let! a = doesItHaveFacebook "https://itu.dk"
+    let! b = doesItHaveFacebook "https://dtu.dk"
+    return [a; b] }
+
+// parallel
+let parCheck =
+    [doesItHaveFacebook "https://itu.dk"; doesItHaveFacebook "https://dtu.dk"]
+    |> Async.Parallel

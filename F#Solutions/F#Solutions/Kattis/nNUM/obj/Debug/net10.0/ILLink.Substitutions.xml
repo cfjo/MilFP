@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="nNUM">
+    <resource name="FSharpSignatureData.nNUM" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.nNUM" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.nNUM" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.nNUM" action="remove"></resource>
+    <resource name="FSharpOptimizationData.nNUM" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.nNUM" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.nNUM" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.nNUM" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.nNUM" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.nNUM" action="remove"></resource>
+  </assembly>
+</linker>

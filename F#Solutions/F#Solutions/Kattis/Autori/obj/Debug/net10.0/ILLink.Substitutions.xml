@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="Autori">
+    <resource name="FSharpSignatureData.Autori" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.Autori" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.Autori" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.Autori" action="remove"></resource>
+    <resource name="FSharpOptimizationData.Autori" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.Autori" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.Autori" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.Autori" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.Autori" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.Autori" action="remove"></resource>
+  </assembly>
+</linker>

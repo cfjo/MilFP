@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="FiftyShadesofPink">
+    <resource name="FSharpSignatureData.FiftyShadesofPink" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.FiftyShadesofPink" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.FiftyShadesofPink" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.FiftyShadesofPink" action="remove"></resource>
+    <resource name="FSharpOptimizationData.FiftyShadesofPink" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.FiftyShadesofPink" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.FiftyShadesofPink" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.FiftyShadesofPink" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.FiftyShadesofPink" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.FiftyShadesofPink" action="remove"></resource>
+  </assembly>
+</linker>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="JobExpenses">
+    <resource name="FSharpSignatureData.JobExpenses" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.JobExpenses" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.JobExpenses" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.JobExpenses" action="remove"></resource>
+    <resource name="FSharpOptimizationData.JobExpenses" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.JobExpenses" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.JobExpenses" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.JobExpenses" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.JobExpenses" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.JobExpenses" action="remove"></resource>
+  </assembly>
+</linker>

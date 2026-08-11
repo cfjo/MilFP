@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="DRMMessages">
+    <resource name="FSharpSignatureData.DRMMessages" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.DRMMessages" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.DRMMessages" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.DRMMessages" action="remove"></resource>
+    <resource name="FSharpOptimizationData.DRMMessages" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.DRMMessages" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.DRMMessages" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.DRMMessages" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.DRMMessages" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.DRMMessages" action="remove"></resource>
+  </assembly>
+</linker>

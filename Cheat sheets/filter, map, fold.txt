@@ -1,0 +1,208 @@
+# F# — `filter`, `map`, and `fold`
+
+## `List.filter`
+
+**Purpose:** Keep only the elements that satisfy a condition.
+
+```fsharp
+List.filter condition list
+```
+
+Example:
+
+```fsharp
+[1; 2; 3; 4]
+|> List.filter (fun x -> x > 2)
+```
+
+Result:
+
+```text
+[3; 4]
+```
+
+Think:
+
+> **"Which elements do I want to keep?"**
+
+The function must return `bool`:
+
+```fsharp
+fun x -> x > 2
+```
+
+---
+
+## `List.map`
+
+**Purpose:** Transform every element into something else.
+
+```fsharp
+List.map transformation list
+```
+
+Example:
+
+```fsharp
+[1; 2; 3]
+|> List.map (fun x -> x * 2)
+```
+
+Result:
+
+```text
+[2; 4; 6]
+```
+
+Think:
+
+> **"What should each element become?"**
+
+`map` keeps the same number of elements.
+
+```text
+[1; 2; 3]
+   ↓
+[2; 4; 6]
+```
+
+The element type can change:
+
+```fsharp
+[1; 2; 3]
+|> List.map (fun x -> string x)
+```
+
+Result:
+
+```text
+["1"; "2"; "3"]
+```
+
+---
+
+## `List.fold`
+
+**Purpose:** Process a list while carrying an accumulator.
+
+```fsharp
+List.fold folder initialValue list
+```
+
+Example:
+
+```fsharp
+[1; 2; 3; 4]
+|> List.fold (fun acc x -> acc + x) 0
+```
+
+Result:
+
+```text
+10
+```
+
+The process is:
+
+```text
+acc = 0
+
+0 + 1 → 1
+1 + 2 → 3
+3 + 3 → 6
+6 + 4 → 10
+```
+
+Think:
+
+> **"How do I update my accumulator for each element?"**
+
+The folder function has this shape:
+
+```fsharp
+fun accumulator element -> newAccumulator
+```
+
+For example:
+
+```fsharp
+fun acc x -> acc + x
+```
+
+The accumulator can be **any type**.
+
+### Example: build a string
+
+```fsharp
+['a'; 'b'; 'c']
+|> List.fold (fun acc c -> acc + string c) ""
+```
+
+Result:
+
+```text
+"abc"
+```
+
+---
+
+# Quick comparison
+
+| Function | Purpose                                       | Returns   |
+| -------- | --------------------------------------------- | --------- |
+| `filter` | Keep elements matching a condition            | A list    |
+| `map`    | Transform every element                       | A list    |
+| `fold`   | Combine/process elements using an accumulator | One value |
+
+### Easy way to remember
+
+```text
+filter → REMOVE
+map    → CHANGE
+fold   → COMBINE
+```
+
+### Examples
+
+```fsharp
+// FILTER: keep even numbers
+[1; 2; 3; 4]
+|> List.filter (fun x -> x % 2 = 0)
+// [2; 4]
+
+
+// MAP: double every number
+[1; 2; 3; 4]
+|> List.map (fun x -> x * 2)
+// [2; 4; 6; 8]
+
+
+// FOLD: add everything together
+[1; 2; 3; 4]
+|> List.fold (fun acc x -> acc + x) 0
+// 10
+```
+
+## The key difference with `fold`
+
+With `map`:
+
+```text
+element → new element
+```
+
+With `fold`:
+
+```text
+accumulator + element → new accumulator
+```
+
+So if you have:
+
+```fsharp
+['a'; 'b'; 'c']
+```
+
+and want to turn each character into another character, use **`map`**.
+
+If you want to turn the entire list into **one result**, use **`fold`**.

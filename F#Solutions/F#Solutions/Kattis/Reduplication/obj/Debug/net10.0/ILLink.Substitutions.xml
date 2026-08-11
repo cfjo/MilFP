@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="Reduplication">
+    <resource name="FSharpSignatureData.Reduplication" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.Reduplication" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.Reduplication" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.Reduplication" action="remove"></resource>
+    <resource name="FSharpOptimizationData.Reduplication" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.Reduplication" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.Reduplication" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.Reduplication" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.Reduplication" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.Reduplication" action="remove"></resource>
+  </assembly>
+</linker>

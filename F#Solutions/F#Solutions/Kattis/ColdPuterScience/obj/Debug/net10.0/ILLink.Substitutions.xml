@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+  <assembly fullname="ColdPuterScience">
+    <resource name="FSharpSignatureData.ColdPuterScience" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedData.ColdPuterScience" action="remove"></resource>
+    <resource name="FSharpSignatureDataB.ColdPuterScience" action="remove"></resource>
+    <resource name="FSharpSignatureCompressedDataB.ColdPuterScience" action="remove"></resource>
+    <resource name="FSharpOptimizationData.ColdPuterScience" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedData.ColdPuterScience" action="remove"></resource>
+    <resource name="FSharpOptimizationDataB.ColdPuterScience" action="remove"></resource>
+    <resource name="FSharpOptimizationCompressedDataB.ColdPuterScience" action="remove"></resource>
+    <resource name="FSharpOptimizationInfo.ColdPuterScience" action="remove"></resource>
+    <resource name="FSharpSignatureInfo.ColdPuterScience" action="remove"></resource>
+  </assembly>
+</linker>
