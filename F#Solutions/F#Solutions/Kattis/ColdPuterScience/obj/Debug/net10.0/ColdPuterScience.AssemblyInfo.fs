@@ -10,7 +10,7 @@ open System.Reflection
 [<assembly: System.Reflection.AssemblyCompanyAttribute("ColdPuterScience")>]
 [<assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")>]
 [<assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")>]
-[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cbea4fc87a71d60400f1a10401afe1eb3bdade0d")>]
+[<assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ca80d3c76b4703fee1894176ce847950c3c0cd14")>]
 [<assembly: System.Reflection.AssemblyProductAttribute("ColdPuterScience")>]
 [<assembly: System.Reflection.AssemblyTitleAttribute("ColdPuterScience")>]
 [<assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")>]
